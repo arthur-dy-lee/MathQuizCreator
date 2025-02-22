@@ -1,5 +1,8 @@
 import random
 
+from tool.output_formatter import OutputFormatter
+
+
 class ArithmeticExerciseGenerator:
     # 100以内的加减法题目生成器， 支持加数和减数是否是个位数的配置，支持是否只成成加法、减法，混合运算，最终结果和被减数始终在100以内
     def __init__(self,
@@ -7,12 +10,14 @@ class ArithmeticExerciseGenerator:
                  per_line=4,
                  operator_type='mixed',
                  a_is_single=False,
-                 b_is_single=True):
+                 b_is_single=True,
+                 formatter=OutputFormatter()):
         self.total = total
         self.per_line = per_line
         self.operator_type = operator_type
         self.a_is_single = a_is_single
         self.b_is_single = b_is_single
+        self.formatter = formatter
 
     def _check_carry(self, a, b):
         """检查个位相加是否进位"""
