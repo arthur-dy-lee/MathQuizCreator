@@ -3,7 +3,7 @@ import random
 class SubtractionProblemGenerator:
     # 20以内借位减法题生成器
 
-    def __init__(self, num_problems=500, a_range=(11,20), b_range=(2,9), per_row=4):
+    def __init__(self, num_problems=500, a_range=(11,20), b_range=(2,9), per_row=3):
         self.num_problems = num_problems
         self.a_min, self.a_max = a_range
         self.b_min, self.b_max = b_range
@@ -27,7 +27,7 @@ class SubtractionProblemGenerator:
         ]
         
         return '\n\n'.join(
-            f"({i+1})  {'           '.join(row)}"
+            f"({i+1})  {'                    '.join(row)}"
             for i, row in enumerate(grouped)
         )
 
