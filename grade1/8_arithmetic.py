@@ -35,7 +35,7 @@ class ArithmeticExerciseGenerator:
         while True:
             # 生成a的取值范围
             a = random.randint(1, 9) if self.a_is_single else (
-                random.randint(21, 99) if operator == '-' else random.randint(1, 99)
+                random.randint(21, 99) if operator == '-' else random.randint(11, 99)
             )
 
             # 生成b的取值范围
@@ -65,7 +65,7 @@ class ArithmeticExerciseGenerator:
                 continue
 
             # 格式化为标准算式
-            return f"{self._format_operand(a)} {operator} {self._format_operand(b)} ="
+            return f"{self._format_operand(a)} {operator} {self._format_operand(b)} =__"
 
     def generate(self):
         """生成并格式化题目"""
@@ -85,10 +85,10 @@ if __name__ == "__main__":
 
     # 初始化生成器
     generator = ArithmeticExerciseGenerator(
-        total=500,
+        total=1500,
         operator_type='+', # 'mixed', '+', '-'
         a_is_single=False,
-        b_is_single=True,
+        b_is_single=False,
         formatter=math_formatter
     )
 

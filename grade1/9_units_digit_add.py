@@ -5,7 +5,7 @@ from itertools import zip_longest
 十位数 相加/减 个位数， 结果是在100以内的加法和减法
 """
 
-def generate_row_numbered_questions(num=500, operation='both', per_row=4):
+def generate_row_numbered_questions(num=500, operation='both', per_row=3):
     # 生成题目内容（不带序号）
     questions = [create_equation(operation) for _ in range(num)]  # 网页3的批量生成方法
 
@@ -28,7 +28,7 @@ def create_equation(operation):
 
     # 运算符逻辑（网页2的随机生成方法）
     #op = random.choice(['+', '-']) if operation == 'both' else operation
-    op = random.choice(['+']) if operation == 'both' else operation
+    op = random.choice(['-']) # if operation == 'both' else operation
 
     # 结果校验（网页3的边界控制）
     return f"{a} {op} {b} = __"
