@@ -148,7 +148,7 @@ def format_output(problems, answers, lines_per_problem, problems_per_line):
 def main():
     parser = argparse.ArgumentParser(description='生成加减法题目')
     parser.add_argument('--num_problems', type=int, default=999, help='总题目数量')
-    parser.add_argument('--carry_ratio', type=float, default=0.8, help='进位加法和退位减法占比')
+    parser.add_argument('--carry_ratio', type=float, default=0.9, help='进位加法和退位减法占比')
     parser.add_argument('--lines_per_problem', type=int, default=1, help='每题后的空行数')
     parser.add_argument('--problems_per_line', type=int, default=4, help='每行题目数')
 

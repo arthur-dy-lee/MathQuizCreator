@@ -11,7 +11,7 @@ class AlignedMultiplicationQuiz:
         self.min_num = min_num
         self.max_num = max_num
         self.col_width = 11  # 保持原列宽
-        self.problem_space = "    "  # 题目间4个空格
+        self.problem_space = "          "  # 题目间4个空格
 
     def generate(self) -> List[str]:
         """生成带大间距的题目"""
@@ -23,11 +23,11 @@ class AlignedMultiplicationQuiz:
         for x, y, t in zip(a, b, types):
             product = x * y
             if t == 0:  # __ × b = c
-                prob = f"__ × {y:2d} = {product:2d}".ljust(self.col_width)
+                prob = f"__ × {y:1d} = {product:2d}".ljust(self.col_width)
             elif t == 1:  # a × __ = c
-                prob = f"{x:2d} × __ = {product:2d}".center(self.col_width)
+                prob = f"{x:1d} × __ = {product:2d}".center(self.col_width)
             else:  # a × b = __
-                prob = f"{x:2d} × {y:2d} = __".rjust(self.col_width)
+                prob = f"{x:1d} × {y:1d} = __".rjust(self.col_width)
             problems.append(prob)
         return self._format(problems)
 
@@ -41,7 +41,7 @@ class AlignedMultiplicationQuiz:
 
 # 使用示例
 if __name__ == "__main__":
-    generator = AlignedMultiplicationQuiz(total=2000, per_line=4)
+    generator = AlignedMultiplicationQuiz(total=10000, per_line=4)
     print("带大间距的两位数对齐版乘法题：\n" + "=" * 60)
     for line in generator.generate():
         print(line)
