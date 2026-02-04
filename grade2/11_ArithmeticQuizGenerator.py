@@ -412,13 +412,13 @@ def main():
         total_questions=3000,              # 总题数
         questions_per_row=4,             # 每行4题
         spaces_after_question=4,         # 题目间2个空格
-        blank_underscores=2,             # 2个下划线
+        blank_underscores=3,             # 2个下划线
         num_align_width=3,               # 按3位数对齐
         operations={Operation.ADD, Operation.SUB, Operation.MUL},  # 四则运算
         min_value=0,                     # 最小值0
         max_value=100,                   # 最大值100
         multiplication_table_only=True, # 乘法不限于9×9
-        add_sub_carry_ratio=0.7,         # 加减法50%进位
+        add_sub_carry_ratio=0.5,         # 加减法50%进位
         mul_carry_ratio=0.6,             # 乘法60%进位（9×9以外）
         add_sub_group_ratio=0.9,         # 加减法占80%，乘除法占20%
     )
